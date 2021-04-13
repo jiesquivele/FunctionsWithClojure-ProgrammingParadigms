@@ -1,11 +1,9 @@
-;PRIMERA FUNCION
+;FIRST FUNCTION
 (defn funcion-lineal [m x b]
 (+ (* m x) b)
 )
 
-(funcion-lineal 4 5 6)
-
-;SEGUNDA FUNCION
+;SECOND FUNCTION
 (defn funcion-pendiente [x1 x2 y1 y2]
   (cond
     (< (/ (- y2 y1)(- x2 x1)) 0) "La pendiente es decreciente"
@@ -14,36 +12,38 @@
   )
 )
 
-(funcion-pendiente -2 0 -4 2)
-
-;SEGUNDA FUNCION (VALOR DE M)
+;SECOND FUNCTION (M VALUE)
 (defn funcion-m [x1 x2 y1 y2]
 (/ (- y2 y1)(- x2 x1))
 )
 
-(funcion-m -2 0 -4 2)
-
-;TERCERA FUNCION
+;THIRD FUNCTION
 (defn funcion-punto-recta [m b x y]
 (cond
   (= (funcion-lineal m b x) y) "El punto esta en la recta"
   :else "El punto NO esta en la recta")
 )
 
-(funcion-punto-recta 4 5 6 26)
-
-;CUARTA FUNCION
+;FOURTH FUNCTION
 (defn funcion-interseccion [m x y]
 (- y (* m x) )
 )
 
-(funcion-interseccion 4 5 26)
-
-;QUINTA FUNCION
+;FIFTH FUNCTION
 (defn llamar-mb [x1 x2 y1 y2]
 (def m (funcion-m x1 x2 y1 y2))
 (def b (funcion-interseccion m x1 y1))
 (str "m: " m " b: " b)
 )
+
+(funcion-lineal 4 5 6)
+
+(funcion-pendiente -2 0 -4 2)
+
+(funcion-m -2 0 -4 2)
+
+(funcion-punto-recta 4 5 6 26)
+
+(funcion-interseccion 4 5 26)
 
 (llamar-mb -2 0 -4 2)
